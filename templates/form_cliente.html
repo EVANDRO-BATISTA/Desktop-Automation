@@ -9,7 +9,7 @@
         method="{% if cliente %}PUT{% else %}POST{% endif %}" 
         
         {% if cliente %}
-            c-swap=".cliente-{{cliente.id}}"
+            c-swap="#cliente-{{cliente.id}}"
         {% else %}
             c-append="#lista-clientes"
         {% endif %}>
@@ -26,3 +26,9 @@
     
     <button type="submit" class="btn btn-primary">{% if cliente %} Salvar {% else %} Criar {% endif %}</button> 
   </form>
+
+  <script>
+    function clearFormFields(form) {
+        form.reset();
+    }
+  </script>
